@@ -4,8 +4,8 @@ import './App.css';
 function App() {
   return (
     <div>
-      <h1>Hola mundo</h1>
-      <p>Este es mi e-commerce</p>
+      <h1>Bienvenidos</h1>
+      <p>Esta es mi tienda online</p>
     </div>
     
   );
