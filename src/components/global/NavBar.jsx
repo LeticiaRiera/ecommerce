@@ -21,6 +21,6 @@ function NavBar(){
         </ReactBootStrap.Navbar>
     </div>
     )
-}
+} 
 
 export default NavBar;
