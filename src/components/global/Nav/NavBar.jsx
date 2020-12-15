@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ReactBootStrap from "react-bootstrap";
-import '../global/Nav.css'
-import CartWidget from './CartWidget';
-import '../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+import '../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+import NavCart from '../CartWidget/NavCart';
+
 
 
 
@@ -20,7 +20,9 @@ function NavBar(){
             <ReactBootStrap.Form inline>
                 <ReactBootStrap.FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
                 <ReactBootStrap.Button variant="outline-primary">Buscar</ReactBootStrap.Button>
-                <CartWidget/>
+                
+                <NavCart/>
+                
             </ReactBootStrap.Form>
         </ReactBootStrap.Navbar>
     </div>
