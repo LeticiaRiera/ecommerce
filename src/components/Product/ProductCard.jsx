@@ -2,7 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ReactBootStrap from "react-bootstrap";
 import CountContainer from "../global/CartWidget/CountContainer";
 
+
 const ProductCard = (props) => {
+
 
     return (
 <div>
@@ -18,13 +20,10 @@ const ProductCard = (props) => {
                 </ReactBootStrap.Card.Text>
                 <CountContainer/>
                 <div className="col-12 mt-2">
-                    <div  className="col-6 float-left mt-2">
+                    <div  className="col-12 float-left mt-2">
                     <ReactBootStrap.Card.Text>
                         {props.precio}
                     </ReactBootStrap.Card.Text>
-                    </div>
-                    <div className="col-6 float-left" >
-                    <ReactBootStrap.Button variant="primary">Añadir</ReactBootStrap.Button>
                     </div>
                 </div>
             </ReactBootStrap.Card.Body>
