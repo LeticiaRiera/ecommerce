@@ -18,7 +18,7 @@ export default function CountContainer(){
     };
 
     const decrement = () => {
- 
+
         if (count === 1){
             alert("Selecciones al menos un producto");
             return;
@@ -30,8 +30,7 @@ export default function CountContainer(){
 
     return (
         <>
-        <CountButton count = {count} increment={increment} decrement = {decrement} />
+        <CountButton count = {count} increment={increment} decrement = {decrement} qty = {qty}/>
        </> 
     )
-
-}
+} 
