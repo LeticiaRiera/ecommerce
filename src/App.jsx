@@ -6,10 +6,12 @@ import ProductCardContainer from './components/Product/ProductCardContainer';
 
 
 function App() {
+
   return (
     <>
+
+
     <Nav />
-    
     <ProductCardContainer />
 
     </>

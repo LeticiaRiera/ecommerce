@@ -20,8 +20,8 @@ const ProductCard = (props) => {
                 </ReactBootStrap.Card.Text>
                 <CountContainer/>
                 <div className="col-12 mt-2">
-                    <div  className="col-12 float-left mt-2">
-                    <ReactBootStrap.Card.Text>
+                    <div  className="col-12 float-left mt-1">
+                    <ReactBootStrap.Card.Text className="text-center">
                         {props.precio}
                     </ReactBootStrap.Card.Text>
                     </div>
