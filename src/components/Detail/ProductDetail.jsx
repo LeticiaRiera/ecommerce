@@ -1,9 +1,6 @@
-import Mantel from '../../assets/images/mantel.jpg';
-import AtrapaSueno from '../../assets/images/atrapa-suenos.jpg';
-import Almohadones from '../../assets/images/almohadones.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import * as ReactBootStrap from "react-bootstrap";
 import CountContainer from "../global/CartWidget/CountContainer";
+import ProductCardContainer from '../Product/ProductCardContainer';
 
 
 
@@ -15,6 +12,7 @@ const ProductDetail = ({item}) => {
         <div className="container">
             <div className="row mb-4">
                 <div className="col-6">
+                    {/* <p>El id de producto es: <b>{item.id}</b></p> */}
                     <h1>{item.nombre}</h1>
                     <img className="w-100" src={item.foto} alt=""/>
                 </div>
@@ -24,6 +22,9 @@ const ProductDetail = ({item}) => {
                     <p>{item.precio}</p>
                     <CountContainer />
                 </div>
+            </div>
+            <div className="mt-4 container">
+                <ProductCardContainer/>
             </div>
         </div>
     )

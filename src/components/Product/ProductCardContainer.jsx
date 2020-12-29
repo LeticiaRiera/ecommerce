@@ -38,7 +38,7 @@ export default function ProductCardContainer (){
     const getProducts = new Promise ((resolve, reject) =>{
         setTimeout(()=> {
             resolve(products);
-        }, 2000)
+        }, 700)
     })
     
     useEffect (() =>{
@@ -61,6 +61,7 @@ export default function ProductCardContainer (){
                     ( items.map((item, index) => 
                         <div key={item.id}>
                             <ProductCard
+                            id={item.id}
                             imagenProducto={item.imagenProducto}
                             titulo={item.titulo}
                             precio={item.precio} />

@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ReactBootStrap from "react-bootstrap";
-import CountContainer from "../global/CartWidget/CountContainer";
+import {Link} from 'react-router-dom';
 
 
 const ProductCard = (props) => {
@@ -20,9 +20,7 @@ const ProductCard = (props) => {
                 </ReactBootStrap.Card.Text>
                 <div className="col-12 mt-2">
                     <div  className="col-12 float-left mt-1">
-                    <ReactBootStrap.Card.Text className="text-center">
-                        Ver más
-                    </ReactBootStrap.Card.Text>
+                    <Link to={`/detail/${props.id}`} > Ver más</Link>
                     </div>
                 </div>
             </ReactBootStrap.Card.Body>

@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ReactBootStrap from "react-bootstrap";
 import '../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 import NavCart from '../CartWidget/NavCart';
-
+import {Link} from 'react-router-dom';
 
 
 
@@ -12,9 +12,10 @@ function NavBar(){
         <ReactBootStrap.Navbar bg="light" variant="light">
             <ReactBootStrap.Navbar.Brand href="#home">Tienda</ReactBootStrap.Navbar.Brand>
             <ReactBootStrap.Nav className="mr-auto">
-                <ReactBootStrap.Nav.Link href="#home">Inicio</ReactBootStrap.Nav.Link>
-                <ReactBootStrap.Nav.Link href="#features">Productos</ReactBootStrap.Nav.Link>
-                <ReactBootStrap.Nav.Link href="#pricing">Ofertas</ReactBootStrap.Nav.Link>
+                <Link className="nav-link" to="/">Inicio</Link>
+                <Link className="nav-link" to="/category/manteles">Manteles</Link>
+                <Link className="nav-link" to="/category/almohadones">Almohadones</Link>
+                <Link className="nav-link" to="/category/atrapa-suenos">Atrapa Sueños</Link>
             </ReactBootStrap.Nav>
 
             <ReactBootStrap.Form inline>

@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './components/global/Nav/Nav';
 import ProductCardContainer from './components/Product/ProductCardContainer';
 import Detail from './components/Detail/index';
+import Home from './components/Home';
+import Category from './components/Category/index';
 
 
 function App() {
@@ -11,15 +13,17 @@ function App() {
   return (
     <BrowserRouter>
     <Nav />
-    <Detail />
       <Switch>
-        <Route path="/Productos">
+       <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route path="/category/manteles">
           <ProductCardContainer/>
         </Route>
-        <Route path="/category">
-          {/* <Category /> */}
+        <Route path="/category/:category_name?">
+          <Category />
         </Route>
-        <Route path="/detail">
+        <Route path="/detail/:id">
           <Detail />
         </Route>
         <Route path="*">
