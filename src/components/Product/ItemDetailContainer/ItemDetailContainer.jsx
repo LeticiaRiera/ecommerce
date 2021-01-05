@@ -1,13 +1,14 @@
-import ProductCard from './ProductCard';
-import Mantel from '../../assets/images/mantel.jpg';
-import AtrapaSueno from '../../assets/images/atrapa-suenos.jpg';
-import Almohadones from '../../assets/images/almohadones.jpg'
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
+import {useParams} from 'react';
+import Detail  from '../../Detail/index';
+import Mantel from '../../../assets/images/mantel.jpg';
+import AtrapaSueno from '../../../assets/images/atrapa-suenos.jpg';
+import Almohadones from '../../../assets/images/almohadones.jpg';
 
+const ItemDetailContainer = () => {
 
-export default function ProductCardContainer (){
-    
-    const [items, setItems] = useState([])
+    // const {products_id} = useParams();
+    const [itemDetail, setItemDetail] = useState(null)
 
     const products = [
         {
@@ -120,49 +121,43 @@ export default function ProductCardContainer (){
         }
     ]
 
-    const getProducts = new Promise ((resolve, reject) =>{
-        setTimeout(()=> {
-            resolve(products);
-        }, 700)
+    const getProduct = new Promise ((resolve, reject) => {
+
+        setTimeout(() => {
+            resolve({
+                id: products.id,
+                titulo: products.titulo,
+                descripcion: products.descripcion,
+                precio: products.precio,
+            })
+        }, 800)
     })
-    
-    useEffect (() =>{
-        getProducts.then(rta => setItems(rta));
 
-    },[]);
+    useEffect(() => {
+        getProduct.then(response => setItemDetail(response))
+    }, [])
 
-    
-    
     return (
-    <section>
-        <div className="container">
-
-        {
-            items.length ?
-            <>
-            <h2 className="text-center mt-2">Productos destacados</h2>
+        <div>
             <div>
                 {
-                    ( items.map((item, index) => 
-                        <div key={item.id}>
-                            <ProductCard
-                            id={item.id}
-                            imagenProducto={item.imagenProducto}
-                            titulo={item.titulo}
-                            precio={item.precio} />
-                        </div>
-                     ))
+                    itemDetail ?
+                    <Detail
+                    props={itemDetail}
+                    /> :
+                    <p>Cargando productos</p>
                 }
             </div>
-            </>:
-            <div className="d-flex justify-content-center mt-4">
-                <div className="alert alert-success col-4 p-4" role="alert">
-                    <strong>Espera un instante! </strong> Cargando productos.
-                </div>
-            </div>
-        }
-
         </div>
-    </section>
     )
+
+
+
+
+
+
+
+
 }
+
+export default ItemDetailContainer;

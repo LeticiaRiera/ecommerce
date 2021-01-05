@@ -44,7 +44,7 @@ const NavCart = () => {
             </ReactBootStrap.Button>
             <ReactBootStrap.Button variant="primary" onClick={handleClickGoCart}>
               <Link to="/cart"></Link>
-              Pagar
+              Ir al carrito
             </ReactBootStrap.Button>
           </ReactBootStrap.Modal.Footer>
         </ReactBootStrap.Modal>

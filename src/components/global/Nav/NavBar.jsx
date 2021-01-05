@@ -13,9 +13,10 @@ function NavBar(){
             <ReactBootStrap.Navbar.Brand href="#home">Tienda</ReactBootStrap.Navbar.Brand>
             <ReactBootStrap.Nav className="mr-auto">
                 <Link className="nav-link" to="/">Inicio</Link>
-                <Link className="nav-link" to="/category/manteles">Manteles</Link>
+                <Link className="nav-link" to="/productos">Productos</Link>
+                {/* <Link className="nav-link" to="/category/manteles">Manteles</Link>
                 <Link className="nav-link" to="/category/almohadones">Almohadones</Link>
-                <Link className="nav-link" to="/category/atrapa-suenos">Atrapa Sueños</Link>
+                <Link className="nav-link" to="/category/atrapa-suenos">Atrapa Sueños</Link> */}
             </ReactBootStrap.Nav>
 
             <ReactBootStrap.Form inline>

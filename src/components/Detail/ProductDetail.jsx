@@ -12,7 +12,6 @@ const ProductDetail = ({item}) => {
         <div className="container">
             <div className="row mb-4">
                 <div className="col-6">
-                    {/* <p>El id de producto es: <b>{item.id}</b></p> */}
                     <h1>{item.nombre}</h1>
                     <img className="w-100" src={item.foto} alt=""/>
                 </div>
