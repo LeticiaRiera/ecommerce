@@ -4,6 +4,7 @@ import AtrapaSueno from '../../assets/images/atrapa-suenos.jpg';
 import Almohadones from '../../assets/images/almohadones.jpg'
 import { useEffect, useState } from 'react';
 
+
 export default function ProductCardContainer (){
     
     const [items, setItems] = useState([])

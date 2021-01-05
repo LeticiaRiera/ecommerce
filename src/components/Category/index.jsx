@@ -3,6 +3,7 @@ import {useEffect} from 'react';
 import {Switch, useParams} from 'react-router-dom';
 
 const Category = () => {
+    
     const {category_name} = useParams();
 
     const identificarCategoria = (cat) => {

@@ -2,14 +2,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 import * as ReactBootStrap from "react-bootstrap";
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
+import Cart from './Cart';
+import {useHistory} from 'react-router-dom';
+
+
 
 
 
 const NavCart = () => {
     const [show, setShow] = useState(false);
-
+    
+    let history = useHistory();
+    
+    const action = ()=>{
+      setShow(!show);
+    }
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
+    const handleClickGoCart =(e)=>{ 
+      history.push("/cart");
+      action();
+    }
   
     return (
       <>
@@ -27,7 +42,8 @@ const NavCart = () => {
             <ReactBootStrap.Button variant="secondary" onClick={handleClose}>
               Cerrar
             </ReactBootStrap.Button>
-            <ReactBootStrap.Button variant="primary" onClick={handleClose}>
+            <ReactBootStrap.Button variant="primary" onClick={handleClickGoCart}>
+              <Link to="/cart"></Link>
               Pagar
             </ReactBootStrap.Button>
           </ReactBootStrap.Modal.Footer>

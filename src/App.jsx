@@ -6,6 +6,7 @@ import ProductCardContainer from './components/Product/ProductCardContainer';
 import Detail from './components/Detail/index';
 import Home from './components/Home';
 import Category from './components/Category/index';
+import Cart from './components/global/CartWidget/Cart';
 
 
 function App() {
@@ -17,14 +18,17 @@ function App() {
        <Route exact path="/">
           <Home/>
         </Route>
-        <Route path="/category/manteles">
+        {/* <Route path="/category/manteles">
           <ProductCardContainer/>
-        </Route>
+        </Route> */}
         <Route path="/category/:category_name?">
           <Category />
         </Route>
         <Route path="/detail/:id">
           <Detail />
+        </Route>
+        <Route path="/cart">
+          <Cart />
         </Route>
         <Route path="*">
           {/* <Error404/> */}

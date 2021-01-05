@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "titulo": "Mantel antimanchas",
+        "imageProducto": "../assets/images/mantel.jpg",
+        "alt": "Mantel antimanchas",
+        "precio": 800 ,
+        "categoria" : "Manteles" ,
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 2,
+        "titulo": "Mantel antimanchas 2",
+        "imageProducto": "../assets/images/mantel.jpg",
+        "alt": "Mantel antimanchas",
+        "precio": 700 ,
+        "categoria" : "Manteles" ,
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 3,
+        "titulo": "Mantel antimanchas 3",
+        "imageProducto": "../assets/images/mantel.jpg",
+        "alt": "Mantel antimanchas",
+        "precio": 750 ,
+        "categoria" : "Manteles" ,
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 4,
+        "titulo": "Mantel antimanchas 4",
+        "imageProducto": "../assets/images/mantel.jpg",
+        "alt": "Mantel antimanchas",
+        "precio": 650 ,
+        "categoria" : "Manteles" ,
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 5,
+        "titulo": "Atrapa sueños" ,
+        "imageProducto": "../assets/images/atrapa-suenos.jpg",
+        "alt": "Atrapa sueños",
+        "precio": 400,
+        "categoria" : "Atrepa-suenos",
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 6,
+        "titulo": "Atrapa sueños 2" ,
+        "imageProducto": "../assets/images/atrapa-suenos.jpg",
+        "alt": "Atrapa sueños",
+        "precio": 450,
+        "categoria" : "Atrepa-suenos",
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 7,
+        "titulo": "Atrapa sueños 3" ,
+        "imageProducto": "../assets/images/atrapa-suenos.jpg",
+        "alt": "Atrapa sueños",
+        "precio": 500,
+        "categoria" : "Atrepa-suenos",
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 8,
+        "titulo": "Atrapa sueños 4" ,
+        "imageProducto": "../assets/images/atrapa-suenos.jpg",
+        "alt": "Atrapa sueños",
+        "precio": 350,
+        "categoria" : "Atrepa-suenos",
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 9,
+        "titulo": "Almohadones" ,
+        "imageProducto": "../assets/images/almohadones.jpg",
+        "alt": "Almohadones",
+        "precio": 500,
+        "categoria" : "Almohadones",
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 10,
+        "titulo": "Almohadones 2",
+        "imageProducto": "../assets/images/almohadones.jpg",
+        "alt": "Almohadones",
+        "precio": 550,
+        "categoria" : "Almohadones",
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 11,
+        "titulo": "Almohadones 3",
+        "imageProducto": "../assets/images/almohadones.jpg",
+        "alt": "Almohadones",
+        "precio": 650,
+        "categoria" : "Almohadones",
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    },
+    {
+        "id": 12,
+        "titulo": "Almohadones 4",
+        "imageProducto": "../assets/images/almohadones.jpg",
+        "alt": "Almohadones",
+        "precio": 550,
+        "categoria" : "Almohadones",
+        "descripcion": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+    }
+]
