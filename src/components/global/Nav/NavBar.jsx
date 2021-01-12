@@ -23,7 +23,7 @@ function NavBar(){
                 <ReactBootStrap.FormControl type="text" placeholder="Buscar" className="mr-sm-2" />
                 <ReactBootStrap.Button variant="outline-primary">Buscar</ReactBootStrap.Button>
                 
-                <NavCart/>
+                <NavCart />
                 
             </ReactBootStrap.Form>
         </ReactBootStrap.Navbar>

@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import './styles/App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,37 +9,44 @@ import Home from './components/Home';
 import Category from './components/Category/index';
 import Cart from './components/global/CartWidget/Cart';
 import CategoriesNav from './components/Product/Categories/CategoriesNav';
+import {Store} from './store';
 
 
 function App() {
 
-  return (
-    <BrowserRouter>
-    <Nav />
-      <Switch>
-       <Route exact path="/">
-          <Home/>
-        </Route>
-        {/* <Route path="/category/manteles">
-          <ProductCardContainer/>
-        </Route> */}
-        <Route path="/productos/:category_name?">
-          <CategoriesNav />
-          <Category />
-        </Route>
-        <Route path="/detail/:id">
-          <Detail />
-        </Route>
-        <Route path="/cart">
-          <Cart />
-        </Route>
-        <Route path="*">
-          {/* <Error404/> */}
-        </Route>
-      </Switch>
+  const [data, setData] = useState({
+    items : [],
+    cantidad: 0,
+  })
 
-       {/* <Footer/>  */}
-    </BrowserRouter>
+  return (
+    <Store.Provider value={[data, setData]}>
+      <BrowserRouter>
+        <Nav />
+          
+          <Switch>
+            <Route exact path="/">
+                <Home/>
+            </Route>
+            <Route path="/productos/:category_name?">
+              <CategoriesNav />
+              <Category />
+            </Route>
+            <Route path="/detail/:id">
+              <Detail />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+            <Route path="*">
+              {/* <Error404/> */}
+            </Route>
+          </Switch>
+
+          {/* <Footer/>  */}
+      </BrowserRouter>
+    </Store.Provider>
+    
     
     
 

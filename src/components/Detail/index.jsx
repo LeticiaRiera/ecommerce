@@ -15,7 +15,7 @@ const Detail = () => {
                 nombre: "Mandel antimanchas",
                 foto: Mantel,
                 descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam?",
-                precio: 800,
+                precio: 19000,
             })
         }, 700);
     });
