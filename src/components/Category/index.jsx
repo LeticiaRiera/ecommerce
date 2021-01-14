@@ -3,9 +3,9 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import ItemDetailContainer from '../Product/ItemDetailContainer/ItemDetailContainer';
 import ItemList from '../Product/ItemList/ItemList';
-import Mantel from '../../assets/images/mantel.jpg';
-import AtrapaSueno from '../../assets/images/atrapa-suenos.jpg';
-import Almohadones from '../../assets/images/almohadones.jpg'
+import Mantel from '../../assets/products/mantel.jpg';
+import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
+import Almohadones from '../../assets/products/almohadones.jpg'
 
 
 const Category = () => {

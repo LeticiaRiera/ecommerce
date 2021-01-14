@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {useParams, Link} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
 // import {products} from '../../products';
-import Mantel from '../../assets/images/mantel.jpg';
+import Mantel from '../../assets/products/mantel.jpg';
 
 
 const Detail = () => {

@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import Mantel from '../../../assets/images/mantel.jpg';
+import Mantel from '../../../assets/products/mantel.jpg';
 const ItemList = ({productsArray, productsCategory}) => {
 
     const productsItems = productsCategory ?
