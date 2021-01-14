@@ -1,5 +1,4 @@
 import {useState} from 'react';
-import './styles/App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './components/global/Nav/Nav';

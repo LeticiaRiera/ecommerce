@@ -1,6 +1,6 @@
 import { useState } from "react";
-import CountButton from "./CountButton";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import CountButton from "../../Detail/CountButton/CountButton";
+import '../../Detail/CountButton/node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function CountContainer(){

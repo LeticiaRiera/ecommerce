@@ -1,12 +1,21 @@
 import {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, Link} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
+// import {products} from '../../products';
 import Mantel from '../../assets/images/mantel.jpg';
+
 
 const Detail = () => {
 
     const {id} = useParams();
     const [product, setProduct] = useState(null);
+
+
+    // const getProducts = new Promise ((resolve, reject) => {
+        
+    //     const selectProduct = products.filter (item => item.id === parseInt(id))
+    //     resolve (selectProduct[0]);
+    // });
 
     const getProducts = new Promise ((resolve, reject) => {
         setTimeout(() =>{
@@ -25,15 +34,25 @@ const Detail = () => {
         .then(response => setProduct(response))
         .catch(error => console.log(error));
     }, []);
+
     return (
         <>
         {
             product ?
             <div className="container">
                 <div className="row">
-                    <div className="col-12">
-                        El id del produco es: {id}
-                    </div>
+                    {/* Esto es para hacer un bredcrum */}
+                    {/* <div className="col-12">
+                        <ol>
+                            <li>
+                                <Link to={`/${product.category}`}>{product.category.split('-').join(' ')}</Link>
+                            </li>
+                            <li>
+                                {product.title}
+                            </li>
+                        </ol>
+                    </div> */}
+
                     <div className="col-12">
                         <ProductDetail item = {product} />
                     </div>

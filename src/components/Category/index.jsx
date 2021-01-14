@@ -1,8 +1,6 @@
   
 import {useEffect, useState} from 'react';
-import {Switch, useParams} from 'react-router-dom';
-// import ItemList from '../Product/ItemList';
-import {Link} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import ItemDetailContainer from '../Product/ItemDetailContainer/ItemDetailContainer';
 import ItemList from '../Product/ItemList/ItemList';
 import Mantel from '../../assets/images/mantel.jpg';
@@ -152,21 +150,5 @@ const Category = () => {
             </div>
         )
 
-    // const identificarCategoria = (cat) => {
-    //     switch(cat) {
-    //         case 'manteles': return <p><Link to={`/detail/{product.categoria}`}/></p>;
-    //         case 'almohadones': return <p>Categoría <b>Almohadones</b></p>;
-    //         case 'atrapa-suenos': return <p>Categoría <b>Atrapa sueños</b></p>
-    //         default: return <p>Categoría no encontada</p>
-    //     }
-    // }
-
-    // return (
-    //     <>
-    //         {
-    //            identificarCategoria(category_name) 
-    //         }
-    //     </>
-    
 }
 export default Category;
