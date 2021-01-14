@@ -3,9 +3,12 @@ import {useParams, Link} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
 // import {products} from '../../products';
 import Mantel from '../../assets/products/mantel.jpg';
+import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
+import Almohadones from '../../assets/products/almohadones.jpg'
 
 
-const Detail = () => {
+
+const Detail = (    ) => {
 
     const {id} = useParams();
     const [product, setProduct] = useState(null);

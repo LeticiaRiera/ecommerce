@@ -6,7 +6,7 @@ import ProductCardContainer from './components/Product/ProductCardContainer';
 import Detail from './components/Detail/index';
 import Home from './components/Home';
 import Category from './components/Category/index';
-import Cart from './components/global/CartWidget/Cart';
+import Cart from './components/Cart';
 import CategoriesNav from './components/Product/Categories/CategoriesNav';
 import {Store} from './store';
 
