@@ -6,6 +6,8 @@ import ItemList from '../Product/ItemList/ItemList';
 import Mantel from '../../assets/products/mantel.jpg';
 import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
 import Almohadones from '../../assets/products/almohadones.jpg'
+import ProductCard from '../Product/ProductCard';
+import ProductCardContainer from '../Product/ProductCardContainer';
 
 
 const Category = () => {
@@ -136,17 +138,17 @@ const Category = () => {
 
         return (
             <div>
-                <ItemDetailContainer
+                <ProductCardContainer
                 className={productsArray.length ? "itemListContainer" : "cargando"} > 
                 {
                     productsArray.length ?
-                    <ItemList 
+                    <ProductCard 
                     productsArray={productsArray}
                     productsCategory={category_name}
                     /> :
                     <p>Cargando productos</p>
                 }
-                </ItemDetailContainer>
+                </ProductCardContainer>
             </div>
         )
 

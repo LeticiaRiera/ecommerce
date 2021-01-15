@@ -3,6 +3,8 @@ import Mantel from '../../assets/products/mantel.jpg';
 import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
 import Almohadones from '../../assets/products/almohadones.jpg'
 import { useEffect, useState } from 'react';
+import json from '../utils/productos.json';
+
 
 
 export default function ProductCardContainer (){
