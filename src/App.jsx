@@ -31,8 +31,9 @@ function App() {
               <CategoriesNav />
               <Category />
             </Route>
-            <Route path="/detail/:id">
-              <Detail />
+
+            <Route path="/detail/:id?">
+              <ProductCardContainer />
             </Route>
             <Route path="/cart">
               <Cart />

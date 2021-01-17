@@ -3,13 +3,42 @@ import * as ReactBootStrap from "react-bootstrap";
 import {Link} from 'react-router-dom';
 
 
-const ProductCard = (props) => {
+const ProductCard = ({productsArray, productsCategory}) => {
 
+    const productItems = productsCategory ?
+    productsArray.length > 0 && productsArray.filter(products => (products.categoria === productsCategory)) :
+    productsArray;
+
+    console.log(productsArray);
 
     return (
-<div>
+    <div>
+        {
+            productItems ?
+            productItems.length && productItems.map((products) => {
+                return (
+                    <div key={products.id}>
+                        <div>
+                            <img src={products.imagenProducto} alt={products.alt}/>
+                        </div>
+                        <div>
+                            <span>{products.titulo}</span>
+                            <span>{products.descripcion}</span>
+                        </div>
+                        <div>
+                            <span>${products.precio}</span>
+                        </div>
+                        <div>
+                            <Link to={`/detail/${products.id}`}>Ver producto</Link>
+                        </div>
+                    </div>
+                )
+            }) :
+            <p>Cargando productos...</p>
+        }
 
-  <ReactBootStrap.Container>
+
+  {/* <ReactBootStrap.Container>
       <ReactBootStrap.Col className="col-lg-3 col-sm-12 mb-4 mt-4 float-left">
         <ReactBootStrap.Card style={{ width: '100%' }}>
             <ReactBootStrap.Card.Img variant="top" src={props.imageProducto} alt={props.altImagenProducto} />
@@ -26,7 +55,7 @@ const ProductCard = (props) => {
             </ReactBootStrap.Card.Body>
         </ReactBootStrap.Card>
     </ReactBootStrap.Col>
-</ReactBootStrap.Container>
+</ReactBootStrap.Container> */}
 
 </div>
     )

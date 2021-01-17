@@ -126,6 +126,7 @@ const Category = () => {
         }
     ]
 
+
         const getProducts = new Promise ((resolve, rejet) => {
             setTimeout(() => {
                 resolve(products);

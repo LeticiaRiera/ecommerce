@@ -4,12 +4,15 @@ import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
 import Almohadones from '../../assets/products/almohadones.jpg'
 import { useEffect, useState } from 'react';
 import json from '../utils/productos.json';
+import { useParams } from 'react-router-dom';
+import ProductDetail from '../Detail/ProductDetail';
 
 
 
 export default function ProductCardContainer (){
     
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState(null)
+    // const [producto_id] = useParams();
 
     const products = [
         {
@@ -124,7 +127,16 @@ export default function ProductCardContainer (){
 
     const getProducts = new Promise ((resolve, reject) =>{
         setTimeout(()=> {
-            resolve(products);
+            resolve({
+                // id: products[producto_id -1].id,
+                // titulo: products[producto_id -1].titulo,
+                // descripcion: products[producto_id -1].descripcion,
+                // precio: products[producto_id -1].precio
+                id: products.id,
+                titulo: products.titulo,
+                descripcion: products.descripcion,
+                precio: products.precio
+            });
         }, 700)
     })
     
@@ -138,30 +150,37 @@ export default function ProductCardContainer (){
     return (
     <section>
         <div className="container">
+        <h2 className="text-center mt-2">Productos destacados</h2>
 
         {
-            items.length ?
-            <>
-            <h2 className="text-center mt-2">Productos destacados</h2>
-            <div>
-                {
-                    ( items.map((item, index) => 
-                        <div key={item.id}>
-                            <ProductCard
-                            id={item.id}
-                            imagenProducto={item.imagenProducto}
-                            titulo={item.titulo}
-                            precio={item.precio} />
-                        </div>
-                     ))
-                }
-            </div>
-            </>:
+            ProductDetail.length ?
+            <ProductDetail
+            props={ProductDetail}/> :
             <div className="d-flex justify-content-center mt-4">
-                <div className="alert alert-success col-4 p-4" role="alert">
+                 <div className="alert alert-success col-4 p-4" role="alert">
                     <strong>Espera un instante! </strong> Cargando productos.
-                </div>
-            </div>
+                 </div>
+             </div>
+            
+            // <div>
+            //     {
+            //         ( items.map((item, index) => 
+            //             <div key={item.id}>
+            //                 <ProductCard
+            //                 id={item.id}
+            //                 imagenProducto={item.imagenProducto}
+            //                 titulo={item.titulo}
+            //                 precio={item.precio} />
+            //             </div>
+            //          ))
+            //     }
+            // </div>
+            // </ProductDetail>:
+            // <div className="d-flex justify-content-center mt-4">
+            //     <div className="alert alert-success col-4 p-4" role="alert">
+            //         <strong>Espera un instante! </strong> Cargando productos.
+            //     </div>
+            // </div>
         }
 
         </div>

@@ -54,7 +54,7 @@ const ProductDetail = ({item}) => {
         <div className="container">
             <div className="row mb-4">
                 <div className="col-6">
-                    <h1>{item.nombre}</h1>
+                    <h1>{item.titulo}</h1>
                     <img className="w-100" src={item.foto} alt=""/>
                 </div>
                 <div className="col-6 d-flex flex-wrap align-content-center">

@@ -11,7 +11,7 @@ import Almohadones from '../../assets/products/almohadones.jpg'
 const Detail = (    ) => {
 
     const {id} = useParams();
-    const [product, setProduct] = useState([]);
+    const [products, setProduct] = useState([]);
 
 
     const getProducts = new Promise ((resolve, reject) => {
@@ -41,23 +41,23 @@ const Detail = (    ) => {
     return (
         <>
         {
-            product ?
+            products ?
             <div className="container">
                 <div className="row">
                     {/* Esto es para hacer un bredcrum */}
                     {/* <div className="col-12">
                         <ol>
                             <li>
-                                <Link to={`/${product.category}`}>{product.category.split('-').join(' ')}</Link>
+                                <Link to={`/${products.category}`}>{products.category.split('-').join(' ')}</Link>
                             </li>
                             <li>
-                                {product.title}
+                                {products.title}
                             </li>
                         </ol>
                     </div> */}
 
                     <div className="col-12">
-                        <ProductDetail item = {product} />
+                        <ProductDetail item = {products} />
                     </div>
                 </div>
             </div> :
