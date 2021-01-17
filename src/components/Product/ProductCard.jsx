@@ -8,15 +8,41 @@ const ProductCard = (props) => {
 
     
 
-    return (
-<div>
 
-  <ReactBootStrap.Container>
+    return (
+    <div>
+        {
+            productItems ?
+            productItems.length && productItems.map((products) => {
+                return (
+                    <div key={products.id}>
+                        <div>
+                            <img src={products.imagenProducto} alt={products.alt}/>
+                        </div>
+                        <div>
+                            <span>{products.titulo}</span>
+                            <span>{products.descripcion}</span>
+                        </div>
+                        <div>
+                            <span>${products.precio}</span>
+                        </div>
+                        <div>
+                            <Link to={`/detail/${products.id}`}>Ver producto</Link>
+                        </div>
+                    </div>
+                )
+            }) :
+            <p>Cargando productos...</p>
+        }
+
+
+  {/* <ReactBootStrap.Container>
       <ReactBootStrap.Col className="col-lg-3 col-sm-12 mb-4 mt-4 float-left">
         <ReactBootStrap.Card style={{ width: '100%' }}>
             <ReactBootStrap.Card.Img variant="top" src={props.imagenProducto} alt={props.alt} />
+
             <ReactBootStrap.Card.Body>
-                <ReactBootStrap.Card.Title>{props.titulo}</ReactBootStrap.Card.Title>
+                <ReactBootStrap.Card.Title>{props.nombre}</ReactBootStrap.Card.Title>
                 <ReactBootStrap.Card.Text>
                 {props.descripcion}
                 </ReactBootStrap.Card.Text>
@@ -28,7 +54,7 @@ const ProductCard = (props) => {
             </ReactBootStrap.Card.Body>
         </ReactBootStrap.Card>
     </ReactBootStrap.Col>
-</ReactBootStrap.Container>
+</ReactBootStrap.Container> */}
 
 </div>
     )

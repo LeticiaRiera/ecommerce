@@ -58,6 +58,7 @@ const ProductDetail = ({item}) => {
                 <div className="col-6">
                     <h1>{item.titulo}</h1>
                     <img className="w-100" src={item.imagenProducto} alt={item.alt}/>
+
                 </div>
                 <div className="col-6 d-flex flex-wrap align-content-center">
                     <div className="justify-content-center col-12">
