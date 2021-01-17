@@ -9,6 +9,8 @@ import {useHistory} from 'react-router-dom';
 
 const ProductDetail = ({item}) => {
 
+    console.log('detail')
+    console.log(item);
     const history           = useHistory();
     const [data, setData]   = useContext(Store);
     const [qty, setQty]     = useState(data.cantidad);	
@@ -55,7 +57,7 @@ const ProductDetail = ({item}) => {
             <div className="row mb-4">
                 <div className="col-6">
                     <h1>{item.titulo}</h1>
-                    <img className="w-100" src={item.foto} alt=""/>
+                    <img className="w-100" src={item.imagenProducto} alt={item.alt}/>
                 </div>
                 <div className="col-6 d-flex flex-wrap align-content-center">
                     <div className="justify-content-center col-12">
@@ -87,9 +89,9 @@ const ProductDetail = ({item}) => {
                     </div>
                 </div>
             </div>
-            <div className="mt-4 container">
+            {/* <div className="mt-4 container">
                 <ProductCardContainer/>
-            </div>
+            </div> */}
         </div>
     )
 }

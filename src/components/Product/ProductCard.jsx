@@ -3,13 +3,10 @@ import * as ReactBootStrap from "react-bootstrap";
 import {Link} from 'react-router-dom';
 
 
-const ProductCard = ({productsArray, productsCategory}) => {
+const ProductCard = (props) => {
+    console.log(props)
 
-    const productItems = productsCategory ?
-    productsArray.length > 0 && productsArray.filter(products => (products.categoria === productsCategory)) :
-    productsArray;
-
-    console.log(productsArray);
+    
 
     return (
     <div>
@@ -41,7 +38,11 @@ const ProductCard = ({productsArray, productsCategory}) => {
   {/* <ReactBootStrap.Container>
       <ReactBootStrap.Col className="col-lg-3 col-sm-12 mb-4 mt-4 float-left">
         <ReactBootStrap.Card style={{ width: '100%' }}>
+<<<<<<< HEAD
             <ReactBootStrap.Card.Img variant="top" src={props.imageProducto} alt={props.altImagenProducto} />
+=======
+            <ReactBootStrap.Card.Img variant="top" src={props.imagenProducto} alt={props.alt} />
+>>>>>>> fix
             <ReactBootStrap.Card.Body>
                 <ReactBootStrap.Card.Title>{props.nombre}</ReactBootStrap.Card.Title>
                 <ReactBootStrap.Card.Text>

@@ -1,12 +1,9 @@
   
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
-import ItemDetailContainer from '../Product/ItemDetailContainer/ItemDetailContainer';
-import ItemList from '../Product/ItemList/ItemList';
 import Mantel from '../../assets/products/mantel.jpg';
 import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
 import Almohadones from '../../assets/products/almohadones.jpg'
-import ProductCard from '../Product/ProductCard';
 import ProductCardContainer from '../Product/ProductCardContainer';
 
 
@@ -22,7 +19,7 @@ const Category = () => {
             imagenProducto: Mantel,
             alt: "Mantel antimanchas",
             precio: 800 ,
-            categoria : "Manteles" ,
+            categoria : "manteles" ,
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -31,7 +28,7 @@ const Category = () => {
             imagenProducto: Mantel,
             alt: "Mantel antimanchas",
             precio: 700 ,
-            categoria : "Manteles" ,
+            categoria : "manteles" ,
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -40,7 +37,7 @@ const Category = () => {
             imagenProducto: Mantel,
             alt: "Mantel antimanchas",
             precio: 750 ,
-            categoria : "Manteles" ,
+            categoria : "manteles" ,
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -49,7 +46,7 @@ const Category = () => {
             imagenProducto: Mantel,
             alt: "Mantel antimanchas",
             precio: 650 ,
-            categoria : "Manteles" ,
+            categoria : "manteles" ,
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -58,7 +55,7 @@ const Category = () => {
             imagenProducto: AtrapaSueno,
             alt: "Atrapa sueños",
             precio: 400,
-            categoria : "Atrepa-suenos",
+            categoria : "atrapa-suenos",
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -67,7 +64,7 @@ const Category = () => {
             imagenProducto: AtrapaSueno,
             alt: "Atrapa sueños",
             precio: 450,
-            categoria : "Atrepa-suenos",
+            categoria : "atrapa-suenos",
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -76,7 +73,7 @@ const Category = () => {
             imagenProducto: AtrapaSueno,
             alt: "Atrapa sueños",
             precio: 500,
-            categoria : "Atrepa-suenos",
+            categoria : "atrapa-suenos",
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -85,7 +82,7 @@ const Category = () => {
             imagenProducto: AtrapaSueno,
             alt: "Atrapa sueños",
             precio: 350,
-            categoria : "Atrepa-suenos",
+            categoria : "atrapa-suenos",
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -94,7 +91,7 @@ const Category = () => {
             imagenProducto: Almohadones,
             alt: "Almohadones",
             precio: 500,
-            categoria : "Almohadones",
+            categoria : "almohadones",
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -103,7 +100,7 @@ const Category = () => {
             imagenProducto: Almohadones,
             alt: "Almohadones",
             precio: 550,
-            categoria : "Almohadones",
+            categoria : "almohadones",
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -112,7 +109,7 @@ const Category = () => {
             imagenProducto: Almohadones,
             alt: "Almohadones",
             precio: 650,
-            categoria : "Almohadones",
+            categoria : "almohadones",
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         },
         {
@@ -121,7 +118,7 @@ const Category = () => {
             imagenProducto: Almohadones,
             alt: "Almohadones",
             precio: 550,
-            categoria : "Almohadones",
+            categoria : "almohadones",
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         }
     ]
@@ -139,17 +136,9 @@ const Category = () => {
 
         return (
             <div>
-                <ProductCardContainer
-                className={productsArray.length ? "itemListContainer" : "cargando"} > 
-                {
-                    productsArray.length ?
-                    <ProductCard 
-                    productsArray={productsArray}
-                    productsCategory={category_name}
-                    /> :
-                    <p>Cargando productos</p>
-                }
-                </ProductCardContainer>
+                <ProductCardContainer category_name={category_name} productsArray={productsArray} /> 
+
+                
             </div>
         )
 
