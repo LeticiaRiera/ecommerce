@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useParams, Link} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
-import json from '../utils/productos.json';
+// import {products} from '../../products';
 import Mantel from '../../assets/products/mantel.jpg';
 import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
 import Almohadones from '../../assets/products/almohadones.jpg'
@@ -139,18 +139,6 @@ const Detail = (    ) => {
         }, 700);
     });
 
-    // const getProducts = new Promise ((resolve, reject) => {
-    //     setTimeout(() =>{
-    //         resolve ({
-    //             id: id,
-    //             nombre: "Mandel antimanchas",
-    //             foto: Mantel,
-    //             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam?",
-    //             precio: 19000,
-    //         })
-    //     }, 700);
-    // });
-
     useEffect(() => {
         getProducts
         .then(response => setProduct(response))
@@ -160,17 +148,17 @@ const Detail = (    ) => {
     return (
         <>
         {
-            products ?
+            product ?
             <div className="container">
                 <div className="row">
                     {/* Esto es para hacer un bredcrum */}
                     {/* <div className="col-12">
                         <ol>
                             <li>
-                                <Link to={`/${products.category}`}>{products.category.split('-').join(' ')}</Link>
+                                <Link to={`/${product.category}`}>{product.category.split('-').join(' ')}</Link>
                             </li>
                             <li>
-                                {products.title}
+                                {product.title}
                             </li>
                         </ol>
                     </div> */}

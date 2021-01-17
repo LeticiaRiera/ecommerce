@@ -46,7 +46,7 @@ const NavCart = () => {
             <ReactBootStrap.Modal.Title>Productos seleccionados</ReactBootStrap.Modal.Title>
           </ReactBootStrap.Modal.Header>
           <ReactBootStrap.Modal.Body>{
-            data.items.map(item =><p>{item.nombre}</p> )
+            data.items.map(item =><p>{item.titulo}</p> )
           }</ReactBootStrap.Modal.Body>
           <ReactBootStrap.Modal.Footer>
             <ReactBootStrap.Button variant="secondary" onClick={handleClose}>

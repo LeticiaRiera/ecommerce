@@ -11,7 +11,7 @@ const Cart = () => {
             <h1>Esto es el cart</h1>
 
             {
-                data.items.map (item => <h2>{item.nombre}</h2>)
+                data.items.map (item => <h2>{item.titulo}</h2>)
             }
         </>
     )

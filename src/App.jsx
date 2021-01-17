@@ -33,7 +33,7 @@ function App() {
             </Route>
 
             <Route path="/detail/:id?">
-              <ProductCardContainer />
+              <Detail />
             </Route>
             <Route path="/cart">
               <Cart />

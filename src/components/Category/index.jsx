@@ -1,4 +1,3 @@
-  
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import Mantel from '../../assets/products/mantel.jpg';
@@ -122,7 +121,6 @@ const Category = () => {
             descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
         }
     ]
-
 
         const getProducts = new Promise ((resolve, rejet) => {
             setTimeout(() => {

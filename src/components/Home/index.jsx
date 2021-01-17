@@ -1,3 +1,4 @@
+
 import ProductCardContainer from '../Product/ProductCardContainer';
 import Mantel from '../../assets/products/mantel.jpg';
 import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
