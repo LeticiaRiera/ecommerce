@@ -7,7 +7,8 @@ import Home from './components/Home';
 import Category from './components/Category/index';
 import Cart from './components/Cart';
 import CategoriesNav from './components/Product/Categories/CategoriesNav';
-import CartContextProvider from './store';
+import {Store} from './store';
+
 
 function App() {
 
@@ -18,8 +19,7 @@ function App() {
   })
 
   return (
-    // <Store.Provider value={[data, setData]}>
-    <CartContextProvider>
+    <Store.Provider value={[data, setData]}>
       <BrowserRouter>
         <Nav />
           
@@ -45,8 +45,7 @@ function App() {
 
           {/* <Footer/>  */}
       </BrowserRouter>
-     {/* </Store.Provider> */}
-    </CartContextProvider>
+    </Store.Provider>
     
     
     

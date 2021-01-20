@@ -3,6 +3,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import {Store} from '../../store';
 import {useState, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
+import {getFirestore} from '../../db'; 
 
 
 
@@ -26,56 +27,25 @@ const ProductDetail = ({item}) => {
                   items: [...data.items, {item: item, cantidad:qty}],
                 })
     }
+    console.log("averrrrr");
 
-    console.log(data);
 
     const GoToCartRedirect = () => {
         history.push('/cart')
     }
  
-    // const restarProducto = () => {
-    //     item.quantity= item.quantity-1;
-    //     if(qty>0) {
-            
-    //         setQty(qty - 1);
-    //         setData({ 
-    //             ...data, 
-    //             cantidad: data.cantidad-1,
-    //             precioTotal: data.precioTotal - precio
-    //         });
-    //     }  
-    //     console.log(data.precioTotal)
-    // }
-  
-
-    // function sumarProducto(){
-    //     item.quantity= item.quantity+=1;
-    //     if(qty<stock) {
-    //         setQty(qty+1)
-    //         setData({ 
-    //             ...data, 
-    //             cantidad: data.cantidad+1,
-    //             precioTotal: data.precioTotal + precioProducto
-    //         });
-    //     }
-    // }
-
-
-
-
-
     return (
         <div className="container">
             <div className="row mb-4">
                 <div className="col-6">
-                    <h1>{item.titulo}</h1>
-                    <img className="w-100" src={item.imagenProducto} alt={item.alt}/>
+                    <h1>{item[0].data.titulo}</h1>
+                    <img className="w-100" src={item[0].data.imagenProducto} alt={item[0].data.alt}/>
                 </div>
                 <div className="col-6 d-flex flex-wrap align-content-center">
                     <div className="justify-content-center col-12">
                         <h1>Descripción</h1>
-                        <p className="mt-4">{item.descripcion}</p>
-                        <p>{item.precio}</p>
+                        <p className="mt-4">{item[0].data.descripcion}</p>
+                        <p>{item[0].data.precio}</p>
                     </div>
 
 
