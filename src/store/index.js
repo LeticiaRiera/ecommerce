@@ -1,55 +1,85 @@
-import {createContext} from 'react';
+// import {createContext} from 'react';
 
-export const Store = createContext(); 
+// export const Store = createContext(); 
+// console.log("index STORE");
 
+import { createContext, useState } from 'react';
 
-// import {createContext, useState, useEffect} from 'react';
-// import json from '../components/utils/productos.json';
+export const Store = createContext();
 
-// export const Store = createContext();
+const CartContextProvider = ({children}) => {
+    const [data, setData] = useState({
+        items: [],
+        totalQuantity: 0
+    });
 
-// const ShopContextProvider = ({ children }) => {
-//     const [item, setCart] = useState([]);
-//     const [products, setProducts] = useState([]);
-  
-//     const addToCart = productId => {
-//       const prodAlCart = products.filter(prod => prod.id === productId)[0];
-//       if (!prodAlCart.qty) {
-//         console.log("Funciono en true");
-//         prodAlCart.qty = 1;
-//         setCart([...item, prodAlCart]);
-//       } else {
-//         item[item.indexOf(prodAlCart)].qty++;
-//         setCart([...item]);
-//       }
-//     };
-  
-//     const deleteFromCart = productId => {
-//       const prodFueraDeCart = item.filter(prod => prod.id !== productId);
-//       setCart(prodFueraDeCart);
-//     };
-  
-//     useEffect(() => {
-//       setProducts(json);
-//       console.log("Productos:");
-//       console.log(products);
-//       console.log("carrito:");
-//       console.log(item);
-//     }, [item]);
-  
-//     return (
-//       <Store.Provider
-//         value={{
-//           item,
-//           products,
-//           addToCart,
-//           deleteFromCart
-//         }}
-//       >
-//         {children}
-//       </Store.Provider>
-//     );
-//   };
-  
-//   export default ShopContextProvider;
-  
+    const isInCart = (searchItemId) => {
+        return data.items.find(item => item.data.id === searchItemId);
+    }
+    
+    const addItem = (item) => {
+        if (!isInCart(item.data.id)) {
+            setData({
+                items: [...data.items, item],
+                totalQuantity: data.totalQuantity + item.quantity
+            });
+        } else {
+            modifyItem(item);
+        }
+    }
+
+    const addToExisting = (itemToModify) => {
+        let elementToBeModify = data.items.findIndex(item => item.data.id === itemToModify.data.id)
+
+        if (elementToBeModify > -1) {
+            data.items[elementToBeModify].quantity = data.items[elementToBeModify].quantity + itemToModify.quantity;
+            setData({
+                items: data.items,
+                totalQuantity: data.totalQuantity + itemToModify.quantity
+            });
+        }
+    }
+    
+    const removeItem = (item) => {
+        let elementToBeRemoved = isInCart(item.data.id);
+
+        if (!!elementToBeRemoved) {
+            if (item.quantity === 0) {
+                setData({
+                    items: data.items.filter(item => item.data.id !== elementToBeRemoved.data.id),
+                    totalQuantity: data.totalQuantity - elementToBeRemoved.quantity
+                });
+            } else {
+                modifyItem(item);
+            }
+        }
+    }
+
+    const modifyItem = (itemToModify) => {
+        let elementToBeModify = data.items.findIndex(item => item.data.id === itemToModify.data.id)
+
+        if (elementToBeModify > -1) {
+            const previousQuantity = data.items[elementToBeModify].quantity;
+            data.items[elementToBeModify].quantity = itemToModify.quantity;
+            setData({
+                items: data.items,
+                totalQuantity: data.totalQuantity - previousQuantity + itemToModify.quantity
+            });
+        }
+    }
+    
+    const clear = () => {
+        setData({
+            items: [],
+            totalQuantity: 0
+        });
+    }
+
+    return (
+        <Store.Provider value={[data, isInCart, addItem, addToExisting, removeItem, clear]}>
+            {children}
+        </Store.Provider>
+    )
+}
+
+export default CartContextProvider;

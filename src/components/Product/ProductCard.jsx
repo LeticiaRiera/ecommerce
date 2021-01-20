@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 
 const ProductCard = (props) => {
-    console.log(props)
+    // console.log(props)
 
     
 

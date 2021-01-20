@@ -1,8 +1,7 @@
-import {useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 import * as ReactBootStrap from "react-bootstrap";
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 import {Store} from '../../../store';
@@ -16,8 +15,10 @@ const NavCart = () => {
   
   
 
-  const [data, useData] = useContext(Store);
+  const [data, setData] = useContext(Store);
   console.log(data);
+
+  
   
   const [show, setShow] = useState(false);
     
@@ -45,9 +46,11 @@ const NavCart = () => {
           <ReactBootStrap.Modal.Header closeButton>
             <ReactBootStrap.Modal.Title>Productos seleccionados</ReactBootStrap.Modal.Title>
           </ReactBootStrap.Modal.Header>
-          <ReactBootStrap.Modal.Body>{
+          <ReactBootStrap.Modal.Body>
+            {
             data.items.map(item =><p>{item.titulo}</p> )
-          }</ReactBootStrap.Modal.Body>
+          }
+          </ReactBootStrap.Modal.Body>
           <ReactBootStrap.Modal.Footer>
             <ReactBootStrap.Button variant="secondary" onClick={handleClose}>
               Cerrar

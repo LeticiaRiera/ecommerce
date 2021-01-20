@@ -1,9 +1,9 @@
 import { useState } from "react";
 import CountButton from "../../Detail/CountButton/CountButton";
-import '../../Detail/CountButton/node_modules/bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-export default function CountContainer(){
+export default function CountContainer({stock, itemQuantity, modifyItemQuantity}){
     const [count, setCount] = useState(1);
     const qty = 5;
 
@@ -16,6 +16,13 @@ export default function CountContainer(){
         }
 
     };
+    const addItem = () => {
+        modifyItemQuantity(itemQuantity + 1);
+    }
+
+    const removeItem = () => {
+        modifyItemQuantity(itemQuantity - 1);
+    }
 
     const decrement = () => {
 
@@ -30,7 +37,8 @@ export default function CountContainer(){
 
     return (
         <>
-        <CountButton count = {count} increment={increment} decrement = {decrement} qty = {qty}/>
+        {/* <CountButton count = {count} increment={increment} decrement = {decrement} qty = {qty} /> */}
+        <CountButton stock={stock} initial={itemQuantity} onAdd={addItem} onRemove={removeItem}/>
        </> 
     )
 } 

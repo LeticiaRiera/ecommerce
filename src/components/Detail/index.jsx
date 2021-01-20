@@ -4,7 +4,9 @@ import ProductDetail from './ProductDetail';
 // import {products} from '../../products';
 import Mantel from '../../assets/products/mantel.jpg';
 import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
-import Almohadones from '../../assets/products/almohadones.jpg'
+import Almohadones from '../../assets/products/almohadones.jpg';
+import {getFirestore} from '../../db'; 
+
 
 
 
@@ -12,6 +14,23 @@ const Detail = (    ) => {
 
     const {id} = useParams();
     const [product, setProduct] = useState({});
+    // const db = getFirestore();
+
+
+    // const getProductsFromDB = () => {
+    //     db.collection('productos').get()
+    //     .then(docs => {
+    //         console.log(docs);
+    //         let arr = [];
+    //         docs.forEach(doc => {
+    //             arr.push({id: doc.id, data: doc.data()})
+    //         })
+    //         console.log(arr);
+
+    //         setProduct(arr);
+    //     })
+    //     .catch(e => console.log(e))
+    // }
 
     const products = [
         {
@@ -21,7 +40,8 @@ const Detail = (    ) => {
             alt: "Mantel antimanchas",
             precio: 800 ,
             categoria : "manteles" ,
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 2,
@@ -30,7 +50,8 @@ const Detail = (    ) => {
             alt: "Mantel antimanchas",
             precio: 700 ,
             categoria : "manteles" ,
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 3,
@@ -39,7 +60,8 @@ const Detail = (    ) => {
             alt: "Mantel antimanchas",
             precio: 750 ,
             categoria : "manteles" ,
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 4,
@@ -48,7 +70,8 @@ const Detail = (    ) => {
             alt: "Mantel antimanchas",
             precio: 650 ,
             categoria : "manteles" ,
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 5,
@@ -57,7 +80,8 @@ const Detail = (    ) => {
             alt: "Atrapa sueños",
             precio: 400,
             categoria : "atrapa-suenos",
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 6,
@@ -66,7 +90,8 @@ const Detail = (    ) => {
             alt: "Atrapa sueños",
             precio: 450,
             categoria : "atrapa-suenos",
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 7,
@@ -75,7 +100,8 @@ const Detail = (    ) => {
             alt: "Atrapa sueños",
             precio: 500,
             categoria : "atrapa-suenos",
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 8,
@@ -84,7 +110,8 @@ const Detail = (    ) => {
             alt: "Atrapa sueños",
             precio: 350,
             categoria : "atrapa-suenos",
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 9,
@@ -93,7 +120,8 @@ const Detail = (    ) => {
             alt: "Almohadones",
             precio: 500,
             categoria : "almohadones",
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 10,
@@ -102,7 +130,8 @@ const Detail = (    ) => {
             alt: "Almohadones",
             precio: 550,
             categoria : "almohadones",
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 11,
@@ -111,7 +140,8 @@ const Detail = (    ) => {
             alt: "Almohadones",
             precio: 650,
             categoria : "almohadones",
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         },
         {
             id: 12,
@@ -120,26 +150,32 @@ const Detail = (    ) => {
             alt: "Almohadones",
             precio: 550,
             categoria : "almohadones",
-            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam"
+            descripcion: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque aut tempora similique est, pariatur odit ut inventore cupiditate ipsa ipsam, rerum dolorum placeat quae at nam facilis, provident quisquam laboriosam",
+            stock: 5
         }
     ]
 
 
     const getProducts = new Promise ((resolve, reject) => {
         setTimeout(() =>{
+            // console.log(items);
+
             resolve ({
+                
                 id: products[id - 1].id,
                 titulo: products[id - 1].titulo,
                 categoria: products[id - 1].categoria,
                 imagenProducto: products[id - 1].imagenProducto,
                 alt: products[id - 1].alt,
                 descripcion: products[id - 1].descripcion,
-                precio: products[id - 1].precio
+                precio: products[id - 1].precio,
+                stock: products[id - 1].stock
             })
         }, 700);
     });
 
     useEffect(() => {
+        // getProductsFromDB();
         getProducts
         .then(response => setProduct(response))
         .catch(error => console.log(error));
