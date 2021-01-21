@@ -3,7 +3,7 @@ import '@firebase/firestore';
 
 
 const app = firebase.initializeApp ({
-    apiKey: "AIzaSyDhIAfOO8ItuWi1EBHEhbE-gWms1QTbbiw",
+    apiKey: process.env.API_KEY,
     authDomain: "react-7130.firebaseapp.com",
     projectId: "react-7130",
     storageBucket: "react-7130.appspot.com",
@@ -13,10 +13,10 @@ const app = firebase.initializeApp ({
 )
 
 
-export function getFirebase(){
+export function getFirebase() {
     return app;
 }
 
-export function getFirestore (){
+export function getFirestore() {
     return firebase.firestore(app);
 }

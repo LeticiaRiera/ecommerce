@@ -16,6 +16,7 @@ const NavCart = () => {
   
 
   const [data, setData] = useContext(Store);
+  console.log("data navcart");
   console.log(data);
 
   
@@ -48,6 +49,7 @@ const NavCart = () => {
           </ReactBootStrap.Modal.Header>
           <ReactBootStrap.Modal.Body>
             {
+              
             data.items.map(item =><p>{item.titulo}</p> )
           }
           </ReactBootStrap.Modal.Body>

@@ -1,10 +1,6 @@
 import {useEffect, useState} from 'react';
-import {useParams, Link} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import ProductDetail from './ProductDetail';
-// import {products} from '../../products';
-import Mantel from '../../assets/products/mantel.jpg';
-import AtrapaSueno from '../../assets/products/atrapa-suenos.jpg';
-import Almohadones from '../../assets/products/almohadones.jpg';
 import {getFirestore} from '../../db'; 
 
 
@@ -36,9 +32,6 @@ const Detail = (    ) => {
 
     useEffect(() => {
         getProductsFromDB();
-        // getProducts
-        // .then(response => setProduct(response))
-        // .catch(error => console.log(error));
     }, []);
 
     return (

@@ -1,5 +1,4 @@
 import ProductCard from './ProductCard';
-import { useEffect, useState } from 'react';
 
 
 export default function ProductCardContainer ({category_name, productsArray}){

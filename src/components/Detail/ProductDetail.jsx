@@ -3,7 +3,6 @@ import * as ReactBootStrap from "react-bootstrap";
 import {Store} from '../../store';
 import {useState, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
-import {getFirestore} from '../../db'; 
 
 
 
@@ -27,7 +26,6 @@ const ProductDetail = ({item}) => {
                   items: [...data.items, {item: item, cantidad:qty}],
                 })
     }
-    console.log("averrrrr");
 
 
     const GoToCartRedirect = () => {
@@ -39,7 +37,7 @@ const ProductDetail = ({item}) => {
             <div className="row mb-4">
                 <div className="col-6">
                     <h1>{item[0].data.titulo}</h1>
-                    <img className="w-100" src={item[0].data.imagenProducto} alt={item[0].data.alt}/>
+                    <img className="w-100" src={`/images/${item[0].data.imagenProducto}`} alt={item[0].data.alt}/>
                 </div>
                 <div className="col-6 d-flex flex-wrap align-content-center">
                     <div className="justify-content-center col-12">

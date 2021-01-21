@@ -8,6 +8,7 @@ import Category from './components/Category/index';
 import Cart from './components/Cart';
 import CategoriesNav from './components/Product/Categories/CategoriesNav';
 import {Store} from './store';
+import Checkout from './components/Checkout';
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   const [data, setData] = useState({
     items : [],
     cantidad: 0,
-    precioTotal: 0,
+    // precioTotal: 0,
   })
 
   return (
@@ -25,7 +26,8 @@ function App() {
           
           <Switch>
             <Route exact path="/">
-                <Home/>
+            <CategoriesNav />
+              <Category />
             </Route>
             <Route path="/productos/:category_name?">
               <CategoriesNav />
@@ -37,6 +39,9 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/cart">
+              <Checkout />
             </Route>
             <Route path="*">
               {/* <Error404/> */}
