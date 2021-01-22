@@ -9,7 +9,8 @@ import {getFirestore} from '../../db';
 const Detail = (    ) => {
 
     const {id} = useParams();
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState([]);
+    const [detalle, setDetalle] = useState({});
     const db = getFirestore();
 
 
@@ -30,9 +31,16 @@ const Detail = (    ) => {
 
 
 
+      
+
     useEffect(() => {
         getProductsFromDB();
-    }, []);
+        const prod = product.filter(item => item.id === id)[0]
+        setDetalle(prod);
+        console.log(product);
+        console.log(id);
+        console.log(prod);
+    }, [id]);
 
     return (
         <>
@@ -53,7 +61,7 @@ const Detail = (    ) => {
                     </div> */}
 
                     <div className="col-12">
-                        <ProductDetail item={product} />
+                        <ProductDetail item={detalle} />
                     </div>
                 </div>
             </div> :

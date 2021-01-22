@@ -3,6 +3,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import {Store} from '../../store';
 import {useState, useContext} from 'react';
 import {useHistory} from 'react-router-dom';
+import Mantel from '../../assets/products/mantel.jpg';
 
 
 
@@ -31,19 +32,21 @@ const ProductDetail = ({item}) => {
     const GoToCartRedirect = () => {
         history.push('/cart')
     }
- 
+   
+
+
     return (
         <div className="container">
             <div className="row mb-4">
                 <div className="col-6">
-                    <h1>{item[0].data.titulo}</h1>
-                    <img className="w-100" src={`/images/${item[0].data.imagenProducto}`} alt={item[0].data.alt}/>
+                    <h1>{item?.data?.titulo}</h1>
+                    <img className="w-100" src={`/images/${item?.data?.imagenProducto}`} alt={item?.data?.alt}/>
                 </div>
                 <div className="col-6 d-flex flex-wrap align-content-center">
                     <div className="justify-content-center col-12">
                         <h1>Descripción</h1>
-                        <p className="mt-4">{item[0].data.descripcion}</p>
-                        <p>{item[0].data.precio}</p>
+                        <p className="mt-4">{item?.data?.descripcion}</p>
+                        <p>{item?.data?.precio}</p>
                     </div>
 
 
@@ -54,7 +57,7 @@ const ProductDetail = ({item}) => {
                     </div>
 
                     <div className="d-flex justify-content-center col-12 mt-2">
-                        <button className="btn btn-primary" onClick={onAdd}>Agregar al carrito</button>
+                        <button className="btn btn-primary" onClick={()=> onAdd(item[0])}>Agregar al carrito</button>
                     </div>
                     
 

@@ -14,7 +14,7 @@ const Cart = ({item}) => {
             <h1>Esto es el cart</h1>
 
             {
-                data.items.map (item => <h2>{item[0].data.titulo}</h2>)
+                data.items.map (item => <h2>{item?.data?.titulo}</h2>)
             }
         </>
     )

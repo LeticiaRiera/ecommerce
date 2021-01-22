@@ -35,7 +35,7 @@ const NavCart = () => {
       history.push("/cart");
       action();
     }
-  
+  console.log(data.items);
     return (
       <>
         <ReactBootStrap.Button variant="primary" className="ml-2" onClick={handleShow}>
@@ -50,7 +50,7 @@ const NavCart = () => {
           <ReactBootStrap.Modal.Body>
             {
               
-            data.items.map(item =><p>{item.titulo}</p> )
+            data.items.map(item =><p>{item?.data?.titulo}</p> )
           }
           </ReactBootStrap.Modal.Body>
           <ReactBootStrap.Modal.Footer>
