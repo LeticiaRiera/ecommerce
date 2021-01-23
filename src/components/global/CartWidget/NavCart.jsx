@@ -7,10 +7,6 @@ import {useHistory} from 'react-router-dom';
 import {Store} from '../../../store';
 
 
-
-
-
-
 const NavCart = () => {
   
   
@@ -50,7 +46,7 @@ const NavCart = () => {
           <ReactBootStrap.Modal.Body>
             {
               
-            data.items.map(item =><p>{item?.data?.titulo}</p> )
+            data.items.map(item =><p>{item?.item?.data?.titulo}</p> )
           }
           </ReactBootStrap.Modal.Body>
           <ReactBootStrap.Modal.Footer>

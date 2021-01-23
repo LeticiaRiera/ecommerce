@@ -7,14 +7,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Cart = ({item}) => {
 
     const [data, setData] = useContext(Store);
-    console.log("que onda");
-    console.log(data);
+    console.log(item);
     return (
         <>
             <h1>Esto es el cart</h1>
 
             {
-                data.items.map (item => <h2>{item?.data?.titulo}</h2>)
+                data.items.map (item => <h2>{item?.item?.data?.titulo}</h2>)
             }
         </>
     )

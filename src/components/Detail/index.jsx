@@ -6,7 +6,7 @@ import {getFirestore} from '../../db';
 
 
 
-const Detail = (    ) => {
+const Detail = () => {
 
     const {id} = useParams();
     const [product, setProduct] = useState([]);
@@ -23,7 +23,7 @@ const Detail = (    ) => {
                 arr.push({id: doc.id, data: doc.data()})
             })
             console.log(arr);
-
+            setDetalle (arr.filter(item => item.id === id)[0]);
             setProduct(arr);
         })
         .catch(e => console.log(e))
@@ -35,17 +35,14 @@ const Detail = (    ) => {
 
     useEffect(() => {
         getProductsFromDB();
-        const prod = product.filter(item => item.id === id)[0]
-        setDetalle(prod);
-        console.log(product);
-        console.log(id);
-        console.log(prod);
-    }, [id]);
+    }, []);
+
+
 
     return (
         <>
         {
-            product ?
+            product?.length > 0 ?
             <div className="container">
                 <div className="row">
                     {/* Esto es para hacer un bredcrum */}

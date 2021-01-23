@@ -57,7 +57,7 @@ const ProductDetail = ({item}) => {
                     </div>
 
                     <div className="d-flex justify-content-center col-12 mt-2">
-                        <button className="btn btn-primary" onClick={()=> onAdd(item[0])}>Agregar al carrito</button>
+                        <button className="btn btn-primary" onClick={()=> onAdd(item)}>Agregar al carrito</button>
                     </div>
                     
 
