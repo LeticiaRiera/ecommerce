@@ -8,30 +8,29 @@ const Category = () => {
     
     const {category_name} = useParams();
     const db = getFirestore();
-    // const [items, setItems] = useState([]);
+    // const [data, setData] = useState ([]);
+    const [productsArray, setProductArray] = useState ([])
 
     const getProductsFromDB = () => {
         db.collection('productos').get()
+        // db.collection('productos').where("categoria", "==", category_name).get()
         .then(docs => {
             let arr = [];
             docs.forEach(doc => {
                 arr.push({id: doc.id, data: doc.data()})
             })
-            console.log(arr);
 
             setProductArray(arr);
         })
         .catch(e => console.log(e))
     }
 
-    const [productsArray, setProductArray] = useState ([])
+    
 
 
         useEffect(() => {
             getProductsFromDB();
-
-            // getProducts.then(rta => setProductArray(rta));
-        }, []);
+        }, [category_name]);
 
         return (
             <div>

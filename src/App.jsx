@@ -7,20 +7,22 @@ import Home from './components/Home';
 import Category from './components/Category/index';
 import Cart from './components/Cart';
 import CategoriesNav from './components/Product/Categories/CategoriesNav';
-import {Store} from './store';
 import Checkout from './components/Checkout';
-
+import {Store} from './store';
+import Footer from './components/global/Footer/Footer';
 
 function App() {
 
   const [data, setData] = useState({
     items : [],
     cantidad: 0,
-    // precioTotal: 0,
+    precioTotal: 0,
   })
 
   return (
+    
     <Store.Provider value={[data, setData]}>
+     {/* <StoreProvider> */}
       <BrowserRouter>
         <Nav />
           
@@ -43,15 +45,18 @@ function App() {
             <Route path="/cart">
               <Checkout />
             </Route>
+            <Route path="/checkout">
+              <Checkout />
+            </Route>
             <Route path="*">
               {/* <Error404/> */}
             </Route>
           </Switch>
 
-          {/* <Footer/>  */}
+          <Footer/> 
       </BrowserRouter>
     </Store.Provider>
-    
+    // </StoreProvider>    
     
     
 

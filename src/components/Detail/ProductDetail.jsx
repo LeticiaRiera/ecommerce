@@ -1,32 +1,65 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as ReactBootStrap from "react-bootstrap";
 import {Store} from '../../store';
-import {useState, useContext} from 'react';
+import {useState, useContext, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import Mantel from '../../assets/products/mantel.jpg';
+import ProductDestacado from '../Product/ProductDestacado';
 
 
 
 const ProductDetail = ({item}) => {
 
-    console.log('detail')
-    console.log(item);
     const history           = useHistory();
     const [data, setData]   = useContext(Store);
-    const [qty, setQty]     = useState(data.cantidad);	
+    const [qty, setQty]     = useState(1);	
 
     const handleClickRestar = () => {
         if (qty > 1) {
             setQty (qty -1);
         }
     }
-
     const onAdd = () => {
-        setData({ ...data,
-                  cantidad: data.cantidad + qty,
-                  items: [...data.items, {item: item, cantidad:qty}],
-                })
+
+        const productoIndex = data.items.findIndex(product => product.item.id === item.id);
+        console.log(productoIndex)
+        const precioTotalProducto = item.data.precio * qty
+        const precioTotal = data.items.reduce((acumulador, item) => acumulador + (item.item.data.precio * item.cantidad), 0)
+        const cantidadTotal = data.items.reduce((acumulador, item) => acumulador + item.cantidad, 0)
+
+        if(data.items[productoIndex]){
+
+            console.log(cantidadTotal)
+            data.items[productoIndex].cantidad += qty
+            data.items[productoIndex].totalProducto = data.items[productoIndex].cantidad * data.items[productoIndex].item.data.precio;
+            data.precioTotal = precioTotal + precioTotalProducto
+            data.cantidad = cantidadTotal + qty
+
+            setData({...data})
+
+        } else {
+            
+            setData({ ...data,
+                cantidad: cantidadTotal + qty,
+                items: [...data.items,
+                {
+                    item: item, 
+                    cantidad:qty,
+                    totalProducto: precioTotalProducto
+                }
+                ],
+                precioTotal: precioTotal + precioTotalProducto
+            })
+        }
+        
+        
     }
+
+    useEffect(() => {
+        setQty(1);
+    }, [item])
+
+
+
 
 
     const GoToCartRedirect = () => {
@@ -57,7 +90,7 @@ const ProductDetail = ({item}) => {
                     </div>
 
                     <div className="d-flex justify-content-center col-12 mt-2">
-                        <button className="btn btn-primary" onClick={()=> onAdd(item)}>Agregar al carrito</button>
+                        <button className="btn btn-primary" onClick={()=> onAdd(onAdd)}>Agregar al carrito</button>
                     </div>
                     
 
@@ -66,6 +99,7 @@ const ProductDetail = ({item}) => {
                     </div>
                 </div>
             </div>
+            <ProductDestacado/>
         </div>
     )
 }

@@ -1,7 +1,7 @@
 const firebase = require("firebase");
 require("firebase/firestore");
 firebase.initializeApp({
-    apiKey: "AIzaSyDhIAfOO8ItuWi1EBHEhbE-gWms1QTbbiw",
+    apiKey: process.env.API_KEY,
     authDomain: "react-7130.firebaseapp.com",
     projectId: "react-7130"
 });

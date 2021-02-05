@@ -3,10 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function CountContainer({ count, increment, decrement }) {
   
-
-  
-
-
     return (
       <>
 <div className="container">

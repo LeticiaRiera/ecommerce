@@ -1,5 +1,7 @@
-import Container from '../../global/Container/Container';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
+import * as ReactBootStrap from "react-bootstrap";
+
 
 const CategoriesNav = () => {
     const menuCategories = [
@@ -18,21 +20,18 @@ const CategoriesNav = () => {
     ]
 
     return (
-        <nav>
-            <Container>
-                <ul>
-                    {
+        <ReactBootStrap.Nav bg="light" className="justify-content-center" activeKey="/home">
+             {
                         menuCategories.map((item, index) => {
                             return (
-                                <li key={index}>
-                                    <Link to={item.ruta}>{item.producto} </Link>
-                                </li>
+                    <ReactBootStrap.Nav.Item className="nav-item mr-3" key={index}>
+                        <Link to={item.ruta}>{item.producto} </Link>
+                    </ReactBootStrap.Nav.Item>
                             )
                         })
                     }
-                </ul>
-            </Container>
-        </nav>
+        </ReactBootStrap.Nav>
+
     )
 }
 

@@ -2,16 +2,10 @@ import ProductCard from './ProductCard';
 
 
 export default function ProductCardContainer ({category_name, productsArray}){
-    console.log(category_name);
-    console.log(productsArray);
 
     const productsItems = category_name ?
-    productsArray.length > 0 && productsArray.filter(product => (product.categoria === category_name)) : productsArray;
+    productsArray.length > 0 && productsArray.filter(product => (product.data.categoria === category_name)) : productsArray;
 
-    console.log("filtrados")
-    console.log(productsItems)
-    
-    
     return (
     <section>
         <div className="container">
@@ -19,11 +13,11 @@ export default function ProductCardContainer ({category_name, productsArray}){
         {
             productsItems.length ?
             <>
-            <h2 className="text-center mt-2">Productos destacados</h2>
+            {/* <h2 className="text-center mt-2">Productos destacados</h2> */}
             <div>
                 {
-                    ( productsItems.map((productsArray, index) => 
-                        <div key={productsArray.id}>
+                    ( productsItems.map((productsArray, i) => 
+                        <div key={productsArray.id + i + Math.random}>
                             <ProductCard
                             id={productsArray.id}
                             imagenProducto={productsArray.data.imagenProducto}

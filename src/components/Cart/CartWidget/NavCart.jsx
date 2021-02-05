@@ -12,11 +12,6 @@ const NavCart = () => {
   
 
   const [data, setData] = useContext(Store);
-  console.log("data navcart");
-  console.log(data);
-
-  
-  
   const [show, setShow] = useState(false);
     
     let history = useHistory();
@@ -31,7 +26,6 @@ const NavCart = () => {
       history.push("/cart");
       action();
     }
-  console.log(data.items);
     return (
       <>
         <ReactBootStrap.Button variant="primary" className="ml-2" onClick={handleShow}>
@@ -45,8 +39,19 @@ const NavCart = () => {
           </ReactBootStrap.Modal.Header>
           <ReactBootStrap.Modal.Body>
             {
-              
-            data.items.map(item =><p>{item?.item?.data?.titulo}</p> )
+            // data.items.map(item =><p>{item?.item?.data?.titulo}</p>)
+            data.items.map((item) =>
+            <div key={item.id}>
+              <div className="d-flex">
+                <div className="float-left">
+                <p>{item?.item?.data?.titulo}</p>
+                </div>
+                <div className="float-left ml-4 text-right">
+                <p><b>{item.cantidad}</b></p>
+                </div>
+              </div>
+
+            </div>)
           }
           </ReactBootStrap.Modal.Body>
           <ReactBootStrap.Modal.Footer>
