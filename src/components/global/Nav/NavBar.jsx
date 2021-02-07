@@ -11,8 +11,8 @@ function NavBar(){
     return (
     <div>
         <ReactBootStrap.Navbar bg="light" variant="light" className="text-center bg_NavBar">
-            <ReactBootStrap.Navbar.Brand href="#home">
-            <img className="w-100" src="images/logo-puras-ñañas.png" alt="Logo Puras ñañas"/>
+            <ReactBootStrap.Navbar.Brand>
+            <Link className="nav-link font_NavBar" to="/"><img className="w-100" src="images/logo-puras-ñañas.png" alt="Logo Puras ñañas"/></Link>
             </ReactBootStrap.Navbar.Brand>
             <ReactBootStrap.Nav className="mr-auto text-center">
                 <Link className="nav-link font_NavBar" to="/">Inicio</Link>

@@ -1,0 +1,10 @@
+.bg_CatNav {
+    background-color: #d3d3d3!important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.bg_CatNav a {
+    color: #0C6D5A;
+    text-decoration: none;
+}

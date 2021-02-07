@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from 'react-router-dom';
 import * as ReactBootStrap from "react-bootstrap";
-
+import './categorie.css';
 
 const CategoriesNav = () => {
     const menuCategories = [
@@ -20,7 +20,7 @@ const CategoriesNav = () => {
     ]
 
     return (
-        <ReactBootStrap.Nav bg="light" className="justify-content-center" activeKey="/home">
+        <ReactBootStrap.Nav bg="light" variant="light"  className="justify-content-center bg_CatNav" activeKey="/home">
              {
                         menuCategories.map((item, index) => {
                             return (

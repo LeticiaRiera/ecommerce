@@ -39,15 +39,16 @@ const NavCart = () => {
           </ReactBootStrap.Modal.Header>
           <ReactBootStrap.Modal.Body>
             {
-            // data.items.map(item =><p>{item?.item?.data?.titulo}</p>)
             data.items.map((item) =>
             <div key={item.id}>
-              <div className="d-flex">
-                <div className="float-left">
-                <p>{item?.item?.data?.titulo}</p>
+              <div className="d-flex col-12">
+                <div className="float-left mt-1 col-6">
+                  <h5>Producto</h5>
+                  <h6>{item?.item?.data?.titulo}</h6>
                 </div>
-                <div className="float-left ml-4 text-right">
-                <p><b>{item.cantidad}</b></p>
+                <div className="float-left ml-4 text-right col-6">
+                  <h5>Cantidad</h5>
+                  <p><b>{item.cantidad}</b></p>
                 </div>
               </div>
 
