@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useContext, useState} from 'react';
+import './cart.css';
+import {useContext} from 'react';
 import {Store} from '../../store';
 import CartItem from './CartItem';
 import {Link} from 'react-router-dom';
@@ -28,7 +29,7 @@ const Cart = () => {
 
     return (
         <>
-        <div className="container">
+        <div className="container cart_Background">
             <div className="row col-12 mt-4">
                 <h2 className="container">Resumen del carrito</h2>
             </div>
@@ -49,7 +50,6 @@ const Cart = () => {
                 data.items.map((item) =>{
                     return (
                         <CartItem
-                            // imagenProducto = {item?.item?.data?.imagenProducto}
                             titulo = {item?.item?.data?.titulo}
                             cantidad = {item?.cantidad}
                             unidad = {item.item?.data?.precio}
@@ -63,7 +63,7 @@ const Cart = () => {
                )
             }
 
-                    <tr>Precio Total: {data.precioTotal}</tr>
+                    <tr><h5>Precio Total: ${data.precioTotal}</h5></tr>
 
                 </tbody>
                 </table>
@@ -77,7 +77,7 @@ const Cart = () => {
             </div>
             <div className="col-4 float-left mt-4">
                 <div className="mt-4"></div>
-                <button className="btn btn-success">
+                <button className="btn cart_BtnFinalizar">
                 <Link to="/checkout" className="text-dark">Finalizar compra</Link>
                 </button>
             </div>

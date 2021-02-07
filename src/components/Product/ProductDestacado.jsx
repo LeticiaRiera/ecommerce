@@ -1,3 +1,4 @@
+import './products.css';
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import ProductCard from './ProductCard';

@@ -34,6 +34,9 @@ const Category = () => {
 
         return (
             <div>
+                <div className="col-12 float-left margin_Top">
+                    <h2 className="text-center mt-4">Otros productos</h2>
+                </div>
                 <ProductCardContainer category_name={category_name} productsArray={productsArray} /> 
 
                 

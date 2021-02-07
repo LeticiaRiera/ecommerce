@@ -2,9 +2,7 @@ import {useState, useContext} from 'react';
 import {Store} from '../../store';
 import {getFirestore} from '../../db';
 import firebase from 'firebase/app';
-import * as ReactBootStrap from "react-bootstrap";
-
-
+import './checkout.css';
 
 const Checkout = () => {
     const db = getFirestore();
@@ -15,7 +13,10 @@ const Checkout = () => {
         apellido: '',
         email: '',
         telefono: '',
+        provincia: '',
+        ciudad: '',
         direccion: '',
+        numeroDireccion: '',
     })
     const [idCompra, setIdCompra] = useState('');
 
@@ -47,34 +48,38 @@ const Checkout = () => {
 
                 {
                     !venta ?
-                    <div className="col-12">
+                    <div className="col-12 checkout_Background mt-4">
                     <h2>Checkout</h2>
-                            <form onSubmit={handleSubmitForm} className="col-8">
+                            <form onSubmit={handleSubmitForm} className="col-12">
                                 <div class="form-group">
-                                    <label for="exampleInputNombre">Nombre</label>
-                                    <input type="text" class="form-control" value={formData.nombre} onChange={handleChangeInput} name="nombre" placeholder="Nombre"/>
-                                    <label for="exampleInputNombre">Apellido</label>
-                                    <input type="text" class="form-control" value={formData.apellido} onChange={handleChangeInput} name="apellido" placeholder="Apellido"/>
-                                    <label for="exampleInputEmail1">Email</label>
-                                    <input type="email" value={formData.email} onChange={handleChangeInput} name="email" placeholder="Email"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                                    <label for="exampleInputEmail1">Teléfono</label>
-                                    <input type="tel" value={formData.telefono} onChange={handleChangeInput} name="telefono" placeholder="Teléfono"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                                    <label for="exampleInputNombre">Dirección</label>
-                                    <input type="text" class="form-control" value={formData.direccion} onChange={handleChangeInput} name="direccion" placeholder="Dirección"/>
+                                    <div className="col-12">
+                                    <input type="text" class="form-control col-5 float-left mb-2 mr-2" value={formData.nombre} onChange={handleChangeInput} name="nombre" placeholder="Nombre"/>
+                                    <input type="text" class="form-control col-5 float-left mb-2" value={formData.apellido} onChange={handleChangeInput} name="apellido" placeholder="Apellido"/>
+                                    </div>
+                                    <div className="col-12">
+
+                                    </div>
+                                    <div className="col-12">
+                                        <input type="email" value={formData.email} onChange={handleChangeInput} name="email" placeholder="Email"  class="form-control col-5 float-left mb-2 mr-2" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                                        <input type="tel" value={formData.telefono} onChange={handleChangeInput} name="telefono" placeholder="Teléfono"  class="form-control col-5 float-left mb-2" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+                                    </div>
+                                    <div  className="col-12">
+                                        <input type="text" class="form-control col-5 float-left mb-2 mr-2" value={formData.provincia} onChange={handleChangeInput} name="provincia" placeholder="Provincia"/>
+                                        <input type="text" class="form-control col-5 float-left mb-2" value={formData.ciudad} onChange={handleChangeInput} name="ciudad" placeholder="Ciudad"/>
+                                    </div>
+                                    <div className="col-12">
+                                        <input type="text" class="form-control col-5 float-left mb-2 mr-2" value={formData.direccion} onChange={handleChangeInput} name="direccion" placeholder="Dirección"/>
+                                        <input type="text" class="form-control col-5 float-left mb-2 mr-2" value={formData.numeroDireccion} onChange={handleChangeInput} name="numeroDireccion" placeholder="Número"/>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"/>
-                                </div>
-                                {/* <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div> */}
-                              <button type="submit" class="btn btn-primary">Enviar</button>
+                              <button type="submit" class="btn btn-primary col-10">Enviar</button>
                             </form>
                         </div>
                     :
-                    <p>Compra realizada con éxito, tu número de seguimiento es: {idCompra}</p>
+                    <div className="col-12 checkout_Background mt-4">
+                        <p>Compra realizada con éxito, tu número de seguimiento es: <b>{idCompra}</b></p>
+                    </div>
+                    
                 }
             </div>
         </section>

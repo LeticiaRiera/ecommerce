@@ -3,13 +3,13 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './components/global/Nav/Nav';
 import Detail from './components/Detail/index';
-import Home from './components/Home';
 import Category from './components/Category/index';
 import Cart from './components/Cart';
 import CategoriesNav from './components/Product/Categories/CategoriesNav';
 import Checkout from './components/Checkout';
 import {Store} from './store';
 import Footer from './components/global/Footer/Footer';
+import ProductDestacado from './components/Product/ProductDestacado';
 
 function App() {
 
@@ -22,13 +22,11 @@ function App() {
   return (
     
     <Store.Provider value={[data, setData]}>
-     {/* <StoreProvider> */}
       <BrowserRouter>
         <Nav />
-          
           <Switch>
             <Route exact path="/">
-            <CategoriesNav />
+              <ProductDestacado />
               <Category />
             </Route>
             <Route path="/productos/:category_name?">
@@ -52,11 +50,9 @@ function App() {
               {/* <Error404/> */}
             </Route>
           </Switch>
-
           <Footer/> 
       </BrowserRouter>
     </Store.Provider>
-    // </StoreProvider>    
     
     
 

@@ -3,9 +3,9 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <footer>
-            <div className="container">
-                <p>Realizado por <strong>LR</strong></p>
+        <footer className="footer d-flex">
+            <div className="container text-center">
+                <p className=" mt-4">Realizado por <strong>LR</strong>. © 2021</p>
             </div>
         </footer>
     )

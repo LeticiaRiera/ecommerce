@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    color: #0C6D5A;
+    
+
+}
+
+
+.card_VarMas {
+    background-color: #0C6D5A;
+    padding: 4px 0px;
+
+  }
+
+  .card_VarMas a {
+    color: #fff;
+  }
+
+
+  .card_Titulo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #0C6D5A;
+  }
+

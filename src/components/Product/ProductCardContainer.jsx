@@ -13,7 +13,7 @@ export default function ProductCardContainer ({category_name, productsArray}){
         {
             productsItems.length ?
             <>
-            {/* <h2 className="text-center mt-2">Productos destacados</h2> */}
+
             <div>
                 {
                     ( productsItems.map((productsArray, i) => 

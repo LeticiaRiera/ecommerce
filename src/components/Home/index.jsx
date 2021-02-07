@@ -1,37 +1,20 @@
 
-// import ProductCardContainer from '../Product/ProductCardContainer';
-// import {useState} from 'react';
-// import {getFirestore} from '../../db'; 
+import ProductCardContainer from '../Product/ProductCardContainer';
+import ProductDestacado from '../Product/ProductDestacado';
 
 
 
-// const Home = ({item}) => {
+const Home = () => {
     
-//     const db = getFirestore();
-//     const [items, setItems] = useState([]);
 
-//     const getProductsFromDB = () => {
-//         db.collection('productos').get()
-//         .then(docs => {
-//             let arr = [];
-//             docs.forEach(doc => {
-//                 arr.push({id: doc.id, data: doc.data()})
-//             })
-//             console.log(arr);
-
-//             setProductArray(arr);
-//         })
-//         .catch(e => console.log(e))
-//     }
-
-//     const [productsArray, setProductArray] = useState ([])
  
 
-//     return (
-//         <>
-//         <ProductCardContainer />
-//         </>
-//     )
-// }
+    return (
+        <>
+        <ProductDestacado />
+        <ProductCardContainer />
+        </>
+    )
+}
 
-// export default Home;
+export default Home;

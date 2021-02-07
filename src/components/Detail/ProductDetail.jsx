@@ -70,31 +70,31 @@ const ProductDetail = ({item}) => {
 
     return (
         <div className="container">
-            <div className="row mb-4">
+            <div className="row mt-4 mb-4">
                 <div className="col-6">
-                    <h1>{item?.data?.titulo}</h1>
+                    <h1 className="mb-2">{item?.data?.titulo}</h1>
                     <img className="w-100" src={`/images/${item?.data?.imagenProducto}`} alt={item?.data?.alt}/>
                 </div>
                 <div className="col-6 d-flex flex-wrap align-content-center">
                     <div className="justify-content-center col-12">
-                        <h1>Descripción</h1>
+                        <h3>Descripción</h3>
                         <p className="mt-4">{item?.data?.descripcion}</p>
-                        <p>{item?.data?.precio}</p>
+                        <p><b>${item?.data?.precio}</b></p>
                     </div>
 
 
-                    <div className="d-flex justify-content-center col-12 mt-2">
+                    <div className="d-flex justify-content-center col-10 mt-2">
                         <button className="btn btn-outline-danger btn-number font-weight-bold mr-1" disabled={qty === 1 ? 'disabled' : null} onClick={handleClickRestar}>-</button>
                         <input className="form-control text-center" type="text" value={qty} readOnly />
                         <button className="btn btn-outline-success btn-number font-weight-bold ml-1" onClick={() => setQty(qty + 1)}>+</button>
                     </div>
 
-                    <div className="d-flex justify-content-center col-12 mt-2">
+                    <div className="d-flex justify-content-center col-10 mt-2">
                         <button className="btn btn-primary" onClick={()=> onAdd(onAdd)}>Agregar al carrito</button>
                     </div>
                     
 
-                    <div className="d-flex justify-content-center col-12 mt-2">
+                    <div className="d-flex justify-content-center col-10 mt-2">
                         <ReactBootStrap.Button onClick={GoToCartRedirect}>Ver carrito</ReactBootStrap.Button>
                     </div>
                 </div>

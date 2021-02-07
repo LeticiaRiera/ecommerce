@@ -1,0 +1,19 @@
+.cart_Background {
+    height: 100vh;
+}
+
+
+.cart_PrecioTotal {
+    color: #0C6D5A;
+}
+
+.cart_BtnFinalizar {
+    background-color: #0C6D5A;
+    color: #fff;
+}
+
+.cart_BtnFinalizar a {
+    color: #fff!important;
+    text-decoration: none;
+}
+
