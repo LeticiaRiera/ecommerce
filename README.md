@@ -1,6 +1,10 @@
 # Puras ñañas - React Js
 
-Este proyecto se realizo para la entrega final del curso de React Js realizado en Coderhopuse.
+E-commer realizado para el proyecto final del curso de React Js realizado en CoderHouse. Incluye estos elementos:
+* Hooks
+* Context
+* Router-dom
+* Firebase
 
 ## Bibliotecas utilizadas
 
